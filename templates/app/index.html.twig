@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <span class="bi bi-clock h1"></span>
+        <div {{ stimulus_controller('epoch') }}></div>
+
+        <div class="text text-muted">
+            created from {{ _self }} on {{ 'now'|date('U') }}
+        </div>
+    <a class="btn btn-primary">
+        <span class="bi bi-download"></span>
+        Install as PWA</a>
+    </div>
+{% endblock %}

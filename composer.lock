@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "838f369c8c8229d7a82908010142d978",
+    "content-hash": "abd67375eb9326e9195ae158b4e8e497",
     "packages": [
         {
             "name": "composer/semver",
@@ -9229,6 +9229,93 @@
             "time": "2020-09-28T06:39:44+00:00"
         },
         {
+            "name": "spomky-labs/phpwa",
+            "version": "1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Spomky-Labs/phpwa.git",
+                "reference": "bf29e1b62a1013242b109cec7cd23151aa36419d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Spomky-Labs/phpwa/zipball/bf29e1b62a1013242b109cec7cd23151aa36419d",
+                "reference": "bf29e1b62a1013242b109cec7cd23151aa36419d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/config": "^6.4|^7.0",
+                "symfony/dependency-injection": "^6.4|^7.0",
+                "symfony/filesystem": "^6.4|^7.0",
+                "symfony/finder": "^6.4|^7.0",
+                "symfony/http-kernel": "^6.4|^7.0",
+                "symfony/mime": "^6.4|^7.0",
+                "symfony/routing": "^6.4|^7.0"
+            },
+            "require-dev": {
+                "infection/infection": "^0.27",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-beberlei-assert": "^1.0",
+                "phpstan/phpstan-deprecation-rules": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^10.0",
+                "rector/rector": "^0.19",
+                "symfony/framework-bundle": "^6.4|^7.0",
+                "symfony/phpunit-bridge": "^6.4|^7.0",
+                "symplify/easy-coding-standard": "^12.0"
+            },
+            "suggest": {
+                "ext-gd": "Required to generate icons (or Imagick).",
+                "ext-imagick": "Required to generate icons (or GD).",
+                "symfony/panther": "For generating screenshots directly from your application"
+            },
+            "default-branch": true,
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "SpomkyLabs\\PwaBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent Morselli",
+                    "homepage": "https://github.com/Spomky"
+                },
+                {
+                    "name": "All contributors",
+                    "homepage": "https://github.com/spomky-labs/phpwa/contributors"
+                }
+            ],
+            "description": "Progressive Web App Manifest Generator Bundle for Symfony.",
+            "homepage": "https://github.com/spomky-labs",
+            "keywords": [
+                "bundle",
+                "pwa",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/Spomky-Labs/phpwa/issues",
+                "source": "https://github.com/Spomky-Labs/phpwa/tree/1.0.x"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Spomky",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/FlorentMorselli",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2024-01-10T10:28:03+00:00"
+        },
+        {
             "name": "symfony/browser-kit",
             "version": "v7.0.0",
             "source": {
@@ -9808,7 +9895,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
