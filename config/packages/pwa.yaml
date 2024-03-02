@@ -1,0 +1,70 @@
+pwa:
+    image_processor: 'pwa.image_processor.imagick'
+    manifest:
+        enabled: true
+        background_color: "#c026d3"
+        theme_color: "#c026d3"
+        name: 'World Time'
+        short_name: 'WorldTime'
+        description: 'A trivial app that displays the time in different countries'
+        orientation: "any"
+        display: "standalone"
+        scope: "/"
+        display_override: ['fullscreen', 'minimal-ui', 'window-controls-overlay']
+        id: "/"
+        start_url: "./"
+        icons:
+            - src: "clock.1024x1024.png"
+              sizes: "any"
+            - src: icons/icon-16x16.png
+              sizes:
+                  - 16
+              type: image/png
+            - src: icons/icon-32x32.png
+              sizes:
+                  - 32
+              type: image/png
+            - src: icons/icon-48x48.png
+              sizes:
+                  - 48
+              type: image/png
+            - src: icons/icon-96x96.png
+              sizes:
+                  - 96
+              type: image/png
+            - src: icons/icon-144x144.png
+              sizes:
+                  - 144
+              type: image/png
+            - src: icons/icon-180x180.png
+              sizes:
+                  - 180
+              type: image/png
+            - src: icons/icon-256x256.png
+              sizes:
+                  - 256
+              type: image/png
+            - src: icons/icon-512x512.png
+              sizes:
+                  - 512
+              type: image/png
+            - src: icons/icon-1024x1024.png
+              sizes:
+                  - 1024
+              type: image/png
+
+        screenshots:
+            - "images/screenshot1.png"
+        categories: []
+        shortcuts: []
+        edge_side_panel:
+            preferred_width: 280
+        widgets: []
+    serviceworker:
+        enabled: true
+        src: "sw.js"
+        skip_waiting: true
+        workbox:
+            warm_cache_urls:
+                - 'app_homepage'
+            page_fallback: 'app_homepage'

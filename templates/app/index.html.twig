@@ -4,11 +4,26 @@
         <span class="bi bi-clock h1"></span>
         <div {{ stimulus_controller('epoch') }}></div>
 
+        {% for id, tz in timezones|slice(0, 5) %}
+            <li>{{ id }}
+                {{ tz }}
+            </li>
+        {% endfor %}
+            <button id="install" class="btn btn-primary" hidden>
+                <span class="bi bi-download"></span>
+                Install
+            </button>
+    </div>
+
+    <div class="footer">
+        <time data-controller="timeago"
+              data-timeago-add-suffix-value="true"
+              data-timeago-include-seconds-value="true"
+              data-timeago-refresh-interval-value="1000"
+              data-timeago-datetime-value="{{ 'now'|date('c') }}"></time>.
         <div class="text text-muted">
             created from {{ _self }} on {{ 'now'|date('U') }}
         </div>
-    <a class="btn btn-primary">
-        <span class="bi bi-download"></span>
-        Install as PWA</a>
+
     </div>
 {% endblock %}

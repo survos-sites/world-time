@@ -1,4 +1,14 @@
-symfony new pwa-demo --webapp --php=8.2 && cd pwa-demo
+# World Time PWA
+
+A simple Symfony app that demonstrates how to create a PWA using spomky-labs/phpwa
+
+
+# Create a PWA
+
+These should move to the phpwa README
+
+```bash
+symfony new epoch-pwa --webapp && cd epoch-pwa
 composer config extra.symfony.allow-contrib true
 composer req symfony/asset-mapper symfony/stimulus-bundle
 
@@ -31,14 +41,54 @@ END
 cat > assets/controllers/epoch_controller.js <<END
 import { Controller } from '@hotwired/stimulus';
 export default class extends Controller {
-connect() {
-this.element.textContent = "epoch time is now " +  Date.now();
+    connect() {
+        this.element.textContent = "epoch time is now " +  Date.now();
+    }
 }
-}
+END
+
+composer config minimum-stability dev
+composer require --dev spomky-labs/phpwa
+
+cat > config/packages/pwa.yaml <<END
+# config/packages/pwa.yaml
+pwa:
+#    image_processor: 'pwa.image_processor.imagick'
+    manifest:
+        enabled: true
+        background_color: "#c026d3"
+        theme_color: "#c026d3"
+        name: 'Epoch Time'
+        short_name: 'ETime!'
+        description: 'A trivial app that displays the current epoch time'
+        orientation: "any"
+        display: "standalone"
+        scope: "/"
+        display_override: ['fullscreen', 'minimal-ui', 'window-controls-overlay']
+        id: "/"
+        start_url: "./"
+        icons:
+            - src: "clock.1024x1024.png"
+              sizes: "any"
+        screenshots:
+            - "images/screenshot1.png"
+            - "images/screenshot2.png"
+        categories: []
+        shortcuts: []
+        edge_side_panel:
+            preferred_width: 280
+        widgets: []
+    serviceworker:
+        enabled: true
+        src: "sw.js"
+        skip_waiting: true
+        workbox:
+            warm_cache_urls:
+                - 'app_homepage'
+            page_fallback: 'app_homepage'
 END
 
 symfony server:start -d
 symfony open:local
 
-composer config minimum-stability dev
-composer require --dev spomky-labs/phpwa
+```

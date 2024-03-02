@@ -9,9 +9,19 @@
 
         {% block javascripts %}
 {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {{ pwa() }}
         {% endblock %}
     </head>
     <body>
+
+    <h3>PWA</h3>
+    <pre>
+    {{ pwa()|escape }}
+
+    </pre>
+
+
+
         {% block body %}{% endblock %}
     </body>
 </html>
