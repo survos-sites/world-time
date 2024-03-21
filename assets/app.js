@@ -11,6 +11,20 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉')
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 
+import 'side-drawer';
+import 'wc-menu-button';
+
+/**
+ * @type Element
+ */
+const menuButton = document.getElementById("menu-button");
+
+/**
+ * @type Element
+ */
+const drawer = document.getElementById("drawer");
+
+
 // main.js
 
 let installPrompt = null;
